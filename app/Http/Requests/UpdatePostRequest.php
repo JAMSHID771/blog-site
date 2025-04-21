@@ -22,7 +22,7 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'min:5|regex:/^[\pL\s\-\']+$/u',
+            'title' => 'min:5',
             'description' => 'min:25',
             'image' => 'mimes:png,jpg|max:2048',
         ];
