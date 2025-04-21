@@ -114,11 +114,11 @@ class PostController extends Controller
     }
     public function uploadImage($image){
         $imagePath = time() .".". $image->getClientOriginalExtension();
-        $uploadedImage = $image->storeAs("uploads", $imagePath, "public");
+        $uploadedImage = $image->storeAs("posts", $imagePath, "public");
         return $uploadedImage;
     }
     public function deleteImage($image){
-        @unlink(storage_path("app/public/". $image));
+        @unlink(storage_path("app/public/posts". $image));
         return;
     }
     public function userProfile($username){
